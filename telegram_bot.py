@@ -15,12 +15,13 @@ def takeFiles(bot):
         for file in files:
             file_path = os.path.join(folder, file)
             with open(file_path, 'rb') as f:
-                bot.send_document(chat_id='@jujsen', document=f)
+                bot.send_document(chat_id=chat_id, document=f)
             sleep(1)
 
 def main():
     load_dotenv()
     botapikey = os.environ['BOT_API_KEY']
+    chat_id = os.environ['TG_CHAT_ID']
     bot = telegram.Bot(token=botapikey)
     takeFiles(bot)
 
