@@ -11,6 +11,7 @@ def save_epic_pics(apikey):
     response = requests.get(epic_url, params=params)
     response.raise_for_status()
     pictures = response.json()
+    os.mkdir('EPIC_images')
     for picture in pictures:
         epic_name = picture['image']
         epic_date = picture['date']
