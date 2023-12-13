@@ -24,7 +24,7 @@ def main():
     botapikey = os.environ['BOT_API_KEY']
     chat_id = os.environ['TG_CHAT_ID']
     bot = telegram.Bot(token=botapikey)
-    takeFiles(bot)
+    upload_files(bot)
 
 
 if __name__ == '__main__':
