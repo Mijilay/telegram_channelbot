@@ -17,8 +17,9 @@ def extention_image(url):
 
 def fetch_apod_images(apikey):
     os.mkdir('images')
+    count = 35
     apod_url = 'https://api.nasa.gov/planetary/apod'
-    params = {'api_key' : apikey,'count':35}
+    params = {'api_key' : apikey,'count':count}
     response = requests.get(apod_url, params=params)
     response.raise_for_status()
     pictures = response.json()
