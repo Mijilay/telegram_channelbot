@@ -6,7 +6,7 @@ from download import download_pic
 from dotenv import load_dotenv
 
 
-def extention_image(url):
+def get_image_extention(url):
     decoded_url = unquote(url)
     parsed_url = urlparse(decoded_url)
     path, fullname = os.path.split(parsed_url.path)
@@ -29,7 +29,7 @@ def fetch_apod_images(apikey):
                 nasa_url = picture['hdurl']
             else:
                 nasa_url = picture['url']
-            extention, filename = extention_image(nasa_url)
+            extention, filename = get_image_extention(nasa_url)
             filepath = os.path.join('images', f'{filename}{extention}')
             download_pic(nasa_url, filepath)
 
