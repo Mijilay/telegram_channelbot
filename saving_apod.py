@@ -14,7 +14,8 @@ def extention_image(url):
     filename, extention = file_extention_path
     return extention, filename
 
-def fetch_apod_image(apikey):
+
+def fetch_apod_images(apikey):
     os.mkdir('images')
     apod_url = 'https://api.nasa.gov/planetary/apod'
     params = {'api_key' : apikey,'count':35}
@@ -27,15 +28,16 @@ def fetch_apod_image(apikey):
                 nasa_url = picture['hdurl']
             else:
                 nasa_url = picture['url']
-            print(nasa_url)
             extention, filename = extention_image(nasa_url)
             filepath = os.path.join('images', f'{filename}{extention}')
             download_pic(nasa_url, filepath)
 
+
 def main():
     load_dotenv()
     apikey = os.environ['NASA_API_KEY']
-    fetch_apod_image(apikey)
+    fetch_apod_images(apikey)
+
 
 if __name__ == "__main__":
     main()
