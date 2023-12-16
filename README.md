@@ -22,7 +22,7 @@ python fetch_spacex_images.py - для изображений запусков
 python saving_apod.py - для получения изображений космоса
 python saving_epic_pics.py - для получения изображений Земли
 ```
-Чтобы опкбликовать изображения:
+Чтобы опубликовать изображения:
 ```
 python telegram_bot.py
 ```
