@@ -21,9 +21,9 @@ def upload_files(bot):
 
 def main():
     load_dotenv()
-    botapikey = os.environ['BOT_API_KEY']
+    bot_api_key = os.environ['BOT_API_KEY']
     chat_id = os.environ['TG_CHAT_ID']
-    bot = telegram.Bot(token=botapikey)
+    bot = telegram.Bot(token=bot_api_key)
     upload_files(bot)
 
 
