@@ -6,7 +6,7 @@ from time import sleep
 from dotenv import load_dotenv
 
 
-def upload_files(bot):
+def upload_files(bot, chat_id):
     while True:
         folders = ["EPIC_images", "images", "launch_photos"]
         folder = random.choice(folders)
@@ -24,7 +24,7 @@ def main():
     bot_api_key = os.environ['BOT_API_KEY']
     chat_id = os.environ['TG_CHAT_ID']
     bot = telegram.Bot(token=bot_api_key)
-    upload_files(bot)
+    upload_files(bot, chat_id)
 
 
 if __name__ == '__main__':
